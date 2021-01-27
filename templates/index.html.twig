@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %} 
+{% block title %}Hello DefaultController!{% endblock %}
+{% block body %}
+
+{% for user in users %}
+
+    <h2>{{ user.name }}</h2>
+    <p>{{ user.day }}</p>
+    <p>{{ user.project }}</p>
+
+{% endfor %}
+
+{% endblock %}
