@@ -4,10 +4,68 @@
 
 {% for user in users %}
 
-    <h2>{{ user.name }}</h2>
+    {# <h2>{{ user.name }}</h2>
     <p>{{ user.day }}</p>
-    <p>{{ user.project }}</p>
+    <p>{{ user.project }}</p> #}
+
+
 
 {% endfor %}
+<table class="table">
 
+<thead>
+    <tr>
+    <th scope="col">Проект</th>
+    {% for days in day %}
+        <th scope="col">{{ days.day }}т</th>        
+    {% endfor %}    
+    </tr>
+</thead>
+
+
+{% for user in users %}
+<tbody>
+    <tr>
+        <td>{{ user.project }}</td>
+
+
+        <td>{% if user.day.id == '1' %}
+            {{ user.name }}            
+        {% endif %}
+        </td>
+
+        <td>{% if user.day.id == '2' %}
+            {{ user.name }}            
+        {% endif %}
+        </td>
+        
+        <td>{% if user.day.id == '3' %}
+            {{ user.name }}            
+        {% endif %}
+        </td>
+
+        <td>{% if user.day.id == '4' %}
+            {{ user.name }}            
+        {% endif %}
+        </td>
+
+        <td>{% if user.day.id == '5' %}
+            {{ user.name }}            
+        {% endif %}
+        </td>
+
+        <td>{% if user.day.id == '6' %}
+            {{ user.name }}            
+        {% endif %}
+        </td>
+
+        <td>{% if user.day.id == '7' %}
+            {{ user.name }}            
+        {% endif %}
+        </td>
+
+    </tr>
+</tbody>
+{% endfor %}
+</table>
 {% endblock %}
